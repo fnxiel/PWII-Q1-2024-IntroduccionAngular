@@ -1,0 +1,10 @@
+<p>segundapantalla works!</p>
+<button (click)="servicioNotificaciones.agregarNotificacion(
+    {
+    titulo: 'Pantalla dos',
+    mensaje: 'Ocurrió un error',
+    tipoNotificacion: 'Error'
+}
+)">Agregar notificacion</button>
+
+<button (click)="servicioNotificaciones.limpiarNotificaciones()">Limpiar notificaciones</button>

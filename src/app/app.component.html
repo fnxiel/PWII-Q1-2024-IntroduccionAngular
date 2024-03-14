@@ -56,14 +56,28 @@
           <clipPath id="a"><path fill="#fff" d="M0 0h982v239H0z" /></clipPath>
         </defs>
       </svg>
+      
       <h1>Hola, bienvenido, {{ title }}</h1>
+      <a class="white py-3" routerLink="/primerapantalla"
+      routerLinkActive="active" ariaCurrentWhenActive="page">Primera
+      pantalla</a>
+      <a class="white py-3" routerLink="/segundapantalla"
+      routerLinkActive="active"  ariaCurrentWhenActive="page">Segunda pantalla</a>
+      <a class="white py-3" routerLink="/"
+      routerLinkActive="active" ariaCurrentWhenActive="page">Inicio</a>
       <h2>{{title}}</h2>
       <p>{{mensaje}}</p>
-      <app-mensaje></app-mensaje>
-      <app-mensaje></app-mensaje>
-      <app-mensaje></app-mensaje>
-      <app-mensaje></app-mensaje>
+      <router-outlet />
+
+      <ul>
+        <li *ngFor="let notificacion of servicioNotificaciones.notificationes">
+            <h4>{{notificacion.tipoNotificacion}} - {{notificacion.titulo}}</h4>
+            <p>{{notificacion.mensaje}}</p>
+        </li>
+      </ul>
+
       <p class="texto-negrita">Congratulations! Your app is running. 🎉</p>
+      
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
@@ -74,6 +88,9 @@
           { title: 'CLI Docs', link: 'https://angular.dev/tools/cli' },
           { title: 'Angular Language Service', link: 'https://angular.dev/tools/language-service' },
           { title: 'Angular DevTools', link: 'https://angular.dev/tools/devtools' },
+          { title: 'Inicio', link: '/' },
+          { title: 'Primera pantalla', link: '/primerapantalla' },
+          { title: 'Segunda pantalla', link: '/segundapantalla' },
         ]; track item.title) {
           <a
             class="pill"
@@ -170,4 +187,4 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 
-<router-outlet />
+

@@ -1,0 +1,15 @@
+<p>{{titulo}}</p>
+<h2>{{productoSeleccionado?.id}}</h2>
+<h3>{{productoSeleccionado?.descripcion}}</h3>
+
+<button (click)="servicioNotificaciones.agregarNotificacion(
+    {
+    titulo: 'Pantalla uno',
+    mensaje: 'Todo bien',
+    tipoNotificacion: 'Informacion'
+}
+)">Agregar notificacion</button>
+
+<button (click)="servicioNotificaciones.limpiarNotificaciones()">Limpiar notificaciones</button>
+
+
